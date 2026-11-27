@@ -573,35 +573,6 @@ body,button,input,textarea,select{font-family:var(--font)}
 .chbar select{min-width:0;max-width:100%;text-overflow:ellipsis}
 @media(max-width:900px){.chbar{flex-wrap:wrap}.chbar select{flex:1 1 100%;width:100%}.chbar label{flex:0 0 auto}}
 
-/* ===== v51: voice translator orb (RAFIQ) ===== */
-.im-page .im-card{text-align:center}
-.im-page .im-out,.im-page .im-look,.im-page .im-wo,.im-page .small{text-align:start}
-.im-stage{display:grid;place-items:center;height:250px;margin:6px 0 0}
-.im-orb{--lvl:0;position:relative;width:170px;height:170px;display:grid;place-items:center}
-.im-orb .ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(45,212,191,.55);transform:scale(calc(1 + .45 * var(--lvl)));opacity:calc(.2 + .7 * var(--lvl));transition:transform .08s linear,opacity .08s linear}
-.im-orb .r2{inset:-20px;border-color:rgba(47,107,255,.5);transform:scale(calc(1 + .6 * var(--lvl)))}
-.im-orb .r3{inset:-44px;border-color:rgba(14,165,233,.28);transform:scale(calc(1 + .8 * var(--lvl)))}
-.im-orb .core{position:absolute;inset:16%;border-radius:50%;background:radial-gradient(circle at 34% 28%,#c4d6ff 0,#2f6bff 46%,#0b3fb8 100%);box-shadow:0 0 calc(22px + 70px * var(--lvl)) rgba(47,107,255,.6);transform:scale(calc(1 + .22 * var(--lvl)));transition:transform .08s linear,box-shadow .08s linear}
-.im-orb .arc{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 60%,#2dd4bf 76%,#2f6bff 86%,transparent 92%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));mask:radial-gradient(farthest-side,transparent calc(100% - 5px),#000 calc(100% - 4px));opacity:0}
-.im-orb.idle .core{animation:imBreath 3.4s ease-in-out infinite}
-.im-orb.translating .arc{opacity:1;animation:imSpin 1.1s linear infinite}
-.im-orb.translating .core{background:radial-gradient(circle at 34% 28%,#c8f5ec 0,#2dd4bf 40%,#0b6e7a 100%);box-shadow:0 0 40px rgba(45,212,191,.5)}
-.im-orb.speaking .core{background:radial-gradient(circle at 34% 28%,#c4d6ff 0,#0ea5e9 46%,#0b3fb8 100%)}
-.im-orb.error .core{background:radial-gradient(circle at 34% 28%,#fecaca 0,#ef4444 50%,#7f1d1d 100%);box-shadow:none}
-.im-orb.error .ring{border-color:rgba(239,68,68,.5)}
-.im-status{text-align:center;font-weight:700;min-height:28px;margin-top:4px;padding:0 8px;color:var(--muted);line-height:1.6}
-.im-status[data-st=listening]{color:#2dd4bf}
-.im-status[data-st=translating]{color:#8fb4ff}
-.im-status[data-st=speaking]{color:#38bdf8}
-.im-status[data-st=error]{color:#f87171}
-.im-page .im-row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;margin:14px 0}
-.im-page .im-mic{padding:14px 26px}
-.im-tts{display:inline-flex;align-items:center;gap:6px;padding:12px 16px;border-radius:999px;border:1px solid rgba(127,127,127,.4);background:transparent;color:inherit;font:inherit;font-weight:700;cursor:pointer}
-.im-tts.on{background:rgba(47,107,255,.16);border-color:rgba(47,107,255,.55)}
-@keyframes imSpin{to{transform:rotate(360deg)}}
-@keyframes imBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
-@media (prefers-reduced-motion:reduce){.im-orb,.im-orb *{animation:none!important;transition:none!important}}
-
 /* ===== v52: download app button ===== */
 .dl-app{display:inline-flex;align-items:center;gap:7px;height:38px;padding:0 16px;border-radius:999px;background:linear-gradient(135deg,#2f6bff,#0ea5e9);color:#fff;font-weight:800;font-size:13.5px;text-decoration:none;white-space:nowrap;box-shadow:0 6px 18px rgba(47,107,255,.35);flex:none}
 .dl-app[hidden]{display:none}
@@ -714,47 +685,6 @@ body{background:radial-gradient(1000px 520px at 85% -8%,rgba(47,107,255,.20),tra
 :root[data-theme] .chip.on,:root[data-theme] .seg button.on,:root[data-theme] .nav button.on,:root[data-theme] .btn:not(.ghost):not(.warn):not(.danger){color:#fff!important}
 :root[data-theme] .hero2 .btn:not(.ghost):not(.warn):not(.danger):not(.zz):not(.yy){color:#1a46d6!important}
 
-/* ===== RAFIQ voice translator: AI-voice look ===== */
-.im-page .im-card{background:radial-gradient(520px 320px at 50% 28%,rgba(91,147,255,.38),transparent 70%),linear-gradient(165deg,#0b1a44 0%,#112a7a 55%,#1a46d6 120%)!important;color:#fff!important;border:1px solid rgba(122,162,255,.3)!important;box-shadow:0 26px 60px -26px var(--primary-glow)}
-.im-page .im-card .seg{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);max-width:420px;margin:0 auto}
-.im-page .im-card .seg button{color:rgba(255,255,255,.75)}
-.im-page .im-card .seg button.on{background:#fff!important;color:#1a46d6!important;box-shadow:none}
-.im-stage{height:310px;position:relative}
-.im-stage::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(130,175,255,.45),rgba(47,107,255,.12) 55%,transparent 72%);filter:blur(10px);animation:rfHalo 4.5s ease-in-out infinite}
-@keyframes rfHalo{0%,100%{transform:scale(.92);opacity:.75}50%{transform:scale(1.08);opacity:1}}
-.im-orb{width:180px;height:180px}
-.im-orb .ring{border:1.5px solid rgba(190,212,255,.55)!important}
-.im-orb .r2{border-color:rgba(150,185,255,.4)!important}
-.im-orb .r3{border-color:rgba(120,165,255,.25)!important}
-.im-orb .core{background:radial-gradient(circle at 32% 26%,#fff 0,#b9d1ff 16%,#4b86ff 50%,#0b1a44 105%)!important;box-shadow:0 0 calc(40px + 90px * var(--lvl)) rgba(91,147,255,.75),inset 0 -14px 30px rgba(11,26,68,.55),inset 0 8px 18px rgba(255,255,255,.35)!important}
-.im-orb .arc{background:conic-gradient(from 0deg,transparent 0 55%,#fff 78%,#7aa8ff 88%,transparent 94%)!important;opacity:.55}
-.im-orb.idle .arc{animation:imSpin 9s linear infinite}
-.im-orb.listening .arc{opacity:.9;animation:imSpin 3s linear infinite}
-.im-orb.translating .core,.im-orb.speaking .core{background:radial-gradient(circle at 32% 26%,#fff 0,#c9e3ff 16%,#38bdf8 50%,#0b2a6e 105%)!important;box-shadow:0 0 70px rgba(56,189,248,.65)!important}
-.im-orb.error .core{background:radial-gradient(circle at 32% 26%,#fff 0,#fecaca 16%,#ef4444 55%,#4a0f0f 105%)!important}
-.im-page .im-status{color:rgba(255,255,255,.85);font-size:15px}
-.im-page .im-status[data-st=listening],.im-full .im-status[data-st=listening]{color:#bcd4ff}
-.im-page .im-status[data-st=translating],.im-page .im-status[data-st=speaking]{color:#8fd8ff}
-.im-page .im-mic{background:#fff!important;color:#1a46d6!important;border:0;padding:15px 30px;font-size:15px;box-shadow:0 14px 34px -12px rgba(255,255,255,.45)}
-.im-page .im-mic.on{background:rgba(255,255,255,.16)!important;color:#fff!important;border:1px solid rgba(255,255,255,.5);box-shadow:0 0 0 0 rgba(255,255,255,.4)}
-.im-page .im-tts{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3);color:#fff}
-.im-page .im-tts.on{background:rgba(255,255,255,.22);border-color:rgba(255,255,255,.6)}
-.im-page .im-out{background:rgba(7,11,22,.35);border:1px solid rgba(255,255,255,.12)}
-.im-page .im-item{border-bottom-color:rgba(255,255,255,.14)}
-.im-page .im-edit{border-color:rgba(255,255,255,.35)}
-.im-page .im-gl{background:rgba(255,255,255,.1)}
-.im-page .im-look input{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.28);color:#fff}
-.im-page .im-look input::placeholder{color:rgba(255,255,255,.6)}
-.im-page .im-look .btn{background:#fff;color:#1a46d6}
-.im-page .im-card .sub,.im-page .im-card .im-wo{color:rgba(255,255,255,.75)}
-.im-page .im-empty{color:#fff}
-.im-full{background:radial-gradient(700px 520px at 50% 38%,rgba(59,123,255,.5),transparent 70%),linear-gradient(180deg,#0b1a44 0%,#070d24 100%)!important}
-.im-full .im-orb{width:240px;height:240px}
-.imf-btn{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2)}
-.imf-bar input{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.22)}
-:root[data-theme] .im-page .im-look .btn:not(.zz):not(.yy):not(.xx){color:#1a46d6!important;background:#fff!important}
-:root[data-theme] .im-page .im-mic:not(.on){color:#1a46d6!important}
-:root[data-theme] .im-page .im-mic.on{color:#fff!important}
 </style>
 </head>
 <body>
@@ -3112,7 +3042,7 @@ const tr=(en,ar)=>L()==='ar'?ar:en;
 function applyLang(){const ar=L()==='ar';document.documentElement.lang=ar?'ar':'en';document.documentElement.dir=ar?'rtl':'ltr';}
 const nfmt=n=>L()==='ar'?String(n).replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d]):String(n);
 /* ================= الإطار (القائمة الجانبية) ================= */
-const NAV=[['dashboard','Dashboard','لوحة التحكم','grid'],['study','Study & Practice','المذاكرة والتدريب','book'],['subjects','Subjects','المواد والمواضيع','layers'],['flash','Flashcards','البطاقات والجداول','cards'],['interp','Voice Translator','المترجم الصوتي','voice'],['arena','Friends Arena','ساحة الأصدقاء','users'],['board','Global Leaderboard','المتصدرون','trophy'],['profile','Profile','الملف الشخصي','user']];
+const NAV=[['dashboard','Dashboard','لوحة التحكم','grid'],['study','Study & Practice','المذاكرة والتدريب','book'],['subjects','Subjects','المواد والمواضيع','layers'],['flash','Flashcards','البطاقات والجداول','cards'],['arena','Friends Arena','ساحة الأصدقاء','users'],['board','Global Leaderboard','المتصدرون','trophy'],['profile','Profile','الملف الشخصي','user']];
 function navItems(){return isAdmin()?NAV.concat([['admin','Admin Panel','لوحة الإدارة','shield-check']]):NAV;}
 let ANNS=[];
 const TITLE_X={admin:['Admin Panel','لوحة الإدارة'],settings:['Settings','الإعدادات'],pview:['Profile','الملف الشخصي'],arena:['Friends Arena','ساحة الأصدقاء']};
@@ -3170,358 +3100,6 @@ function guardOld(){
   if(typeof roomGuard==='function'&&roomGuard())return true;
   return false;
 }
-
-/* ===== المترجم الصوتي (Voice Translator) v2 – أدق: مصطلحات المنهج + تصحيح + تحذير الدقة ===== */
-(function(){const s=document.createElement('style');s.textContent=`
-.im-card{margin-top:14px}
-.im-row{display:flex;justify-content:center;margin:18px 0}
-.im-mic{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;border:0;cursor:pointer;background:linear-gradient(135deg,#2563eb,#0ea5e9);color:#fff;font:inherit;font-weight:700;box-shadow:0 8px 24px rgba(37,99,235,.25)}
-.im-mic .ic{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2}
-.im-mic.on{background:linear-gradient(135deg,#dc2626,#f97316);animation:imPulse 1.4s infinite}
-@keyframes imPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,.35)}50%{box-shadow:0 0 0 12px rgba(220,38,38,0)}}
-.im-out{min-height:120px;max-height:52vh;overflow:auto;padding:12px;border-radius:14px;background:rgba(127,127,127,.08)}
-.im-item{padding:10px 0;border-bottom:1px solid rgba(127,127,127,.18)}
-.im-item:last-child{border-bottom:0}
-.im-srow{display:flex;gap:8px;align-items:flex-start}
-.im-src{flex:1;line-height:1.9;font-size:1.05em}
-.im-edit{background:none;border:1px solid rgba(127,127,127,.35);border-radius:8px;padding:2px 8px;cursor:pointer;color:inherit;font:inherit;font-size:.85em}
-.im-tr{margin-top:6px;opacity:.85;line-height:1.8}
-.im-note{margin-top:4px;font-size:.85em;opacity:.8}
-.im-warn{color:#d97706}
-.im-gl{margin-top:6px;font-size:.88em;padding:6px 8px;border-radius:8px;background:rgba(37,99,235,.10)}
-.imw{cursor:pointer;border-radius:6px;padding:0 2px}
-.imw:hover,.imw:focus{background:rgba(37,99,235,.18);outline:none}
-.im-interim{opacity:.55;font-style:italic}
-.im-fix{display:flex;gap:6px;margin-top:6px}
-.im-fix input{flex:1;min-width:0;padding:8px 10px;border-radius:10px;border:1px solid rgba(127,127,127,.35);background:transparent;color:inherit;font:inherit}
-.im-look{display:flex;gap:8px;margin-top:14px}
-.im-look input{flex:1;min-width:0;padding:10px 12px;border-radius:12px;border:1px solid rgba(127,127,127,.35);background:transparent;color:inherit;font:inherit}
-.im-wo{margin-top:10px;min-height:24px;font-weight:600}
-.im-empty{opacity:.6;text-align:center;padding:24px 8px}
-`;document.head.appendChild(s);})();
-
-const IM={on:false,rec:null,src:'en-US',log:[],interim:'',cache:new Map(),gl:null};
-const IM_LEAVE_SET={v:false};
-const imCode=tag=>tag==='ar-EG'?'ar':'en';
-const imDir=tag=>tag==='ar-EG'?'rtl':'ltr';
-const imOther=tag=>tag==='ar-EG'?'en-US':'ar-EG';
-// نطبّع النص للمقارنة: حروف صغيرة، من غير علامات ترقيم وتشكيل، وأ/إ/آ → ا
-function imNorm(t,tag){
-  let x=String(t||'').toLowerCase().replace(/[ً-ْـ]/g,'').replace(/[أإآ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه');
-  return x.replace(/[^\p{L}\p{N}\s]/gu,' ').replace(/\s+/g,' ').trim();
-}
-// قاموس المصطلحات من المنهج نفسه: كل "عرّف: X" بالعربي مقابل "Define: X" بالإنجليزي
-function imGloss(){
-  if(IM.gl)return IM.gl;
-  const en=new Map(),ar=new Map();
-  const add=(e,a)=>{if(!e||!a||e.length<3||a.length<2)return;const ek=imNorm(e,'en-US'),ak=imNorm(a,'ar-EG');if(!ek||!ak)return;if(!en.has(ek))en.set(ek,{e,a});if(!ar.has(ak))ar.set(ak,{e,a});};
-  ALL.forEach(x=>{
-    const m=/^Define:\s*(.+?)\.?$/i.exec(x.q||''),n=/^عرّف:\s*(.+?)\.?$/.exec(x.qa||'');
-    if(!m||!n)return;
-    const eEn=m[1].replace(/\s*\(.*?\)\s*$/,'').trim();
-    const aAr=n[1].replace(/\s*\(.*?\)\s*$/,'').trim();
-    add(eEn,aAr);
-    // الاسم الإنجليزي لو مكتوب بين أقواس في العربي أو الإنجليزي
-    const p1=/\(([A-Za-z][^)]*)\)/.exec(n[1]),p2=/\(([^)]*)\)/.exec(m[1]);
-    if(p1)add(p1[1].trim(),aAr);
-    if(p2&&/[A-Za-z]/.test(p2[1]))add(eEn,aAr);
-  });
-  IM.gl={en,ar};
-  return IM.gl;
-}
-// هل الجملة كلها مصطلح واحد معروف؟
-function imExactTerm(text,tag){
-  const g=imGloss(),k=imNorm(text,tag);
-  if(!k)return null;
-  const hit=tag==='ar-EG'?g.ar.get(k):g.en.get(k);
-  if(!hit)return null;
-  return tag==='ar-EG'?hit.e:hit.a;
-}
-// المصطلحات الموجودة داخل الجملة (للعرض كـ"من المنهج")
-function imTermsIn(text,tag){
-  const g=imGloss(),k=' '+imNorm(text,tag)+' ',map=tag==='ar-EG'?g.ar:g.en,out=[];
-  [...map.keys()].sort((a,b)=>b.length-a.length).forEach(key=>{
-    if(key.length<3)return;
-    if(k.includes(' '+key+' ')&&!out.some(o=>o.k.includes(key))){out.push({k:key,v:map.get(key)});}
-  });
-  return out.slice(0,6).map(o=>tag==='ar-EG'?{src:o.v.a,dst:o.v.e}:{src:o.v.e,dst:o.v.a});
-}
-// ترجمة بالمترجم المدمج في المتصفح لو موجود، وإلا MyMemory (مع تقسيم النص الطويل)
-async function imApi(text,from,to){
-  try{
-    if(window.Translator&&Translator.availability){
-      const av=await Translator.availability({sourceLanguage:from,targetLanguage:to});
-      if(av&&av!=='unavailable'){const t=await Translator.create({sourceLanguage:from,targetLanguage:to});return {text:await t.translate(text),match:1};}
-    }
-  }catch(e){}
-  const parts=[];let cur='';
-  text.split(/\s+/).forEach(w=>{if((cur+' '+w).length>400){parts.push(cur);cur=w;}else cur=cur?cur+' '+w:w;});
-  if(cur)parts.push(cur);
-  let outT=[],minM=1;
-  for(const p of parts){
-    const r=await fetch('https://api.mymemory.translated.net/get?q='+encodeURIComponent(p)+'&langpair='+from+'|'+to);
-    const j=await r.json();
-    const t=j&&j.responseData&&j.responseData.translatedText;
-    if(!j||j.responseStatus!==200||!t||/MYMEMORY WARNING|QUERY LENGTH/i.test(t))throw new Error('translate');
-    outT.push(t);minM=Math.min(minM,Number(j.responseData.match)||0);
-  }
-  return {text:outT.join(' '),match:minM};
-}
-async function imTranslate(text,fromTag,toTag){
-  const from=imCode(fromTag),to=imCode(toTag),key=from+'>'+to+'>'+text;
-  if(IM.cache.has(key))return IM.cache.get(key);
-  // 1) الجملة كلها مصطلح من المنهج: نستخدم ترجمة المنهج المعتمدة مباشرة
-  const exact=imExactTerm(text,fromTag);
-  let res;
-  if(exact)res={text:exact,match:1,source:'book'};
-  else{const r=await imApi(text,from,to);res={text:r.text,match:r.match,source:'api'};}
-  IM.cache.set(key,res);
-  return res;
-}
-function imWords(text,tag){
-  return text.split(/\s+/).filter(Boolean).map(w=>'<span class="imw" tabindex="0" data-w="'+esc(w)+'" data-l="'+tag+'">'+esc(w)+'</span>').join(' ');
-}
-function imRender(){
-  const out=$('#imOut');if(!out)return;
-  if(!IM.log.length&&!IM.interim){out.innerHTML='<div class="im-empty">'+tr('Press the button and start speaking. Your words will appear here with their translation.','اضغط الزرار واتكلم. كلامك هيظهر هنا وترجمته تحته.')+'</div>';return;}
-  let h=IM.log.map((e,i)=>{
-    const dir=imDir(e.from),tdir=imDir(e.to);
-    let trHtml;
-    if(e.tr===null)trHtml='…';
-    else if(e.tr===false)trHtml='<span class="im-warn">⚠ '+tr('Translation unavailable right now','الترجمة مش متاحة دلوقتي')+'</span>';
-    else trHtml=esc(e.tr.text)+(e.tr.source==='book'?'<div class="im-note">📘 '+tr('Official term from the book','مصطلح معتمد من الكتاب')+'</div>':(e.tr.match<0.6?'<div class="im-note im-warn">⚠ '+tr('Not sure about this translation — check it or fix the words above.','الترجمة مش مؤكدة، راجعها أو صحّح الكلمات اللي فوق.')+'</div>':''));
-    const terms=e.tr&&e.tr!==false?imTermsIn(e.src,e.from):[];
-    const gl=terms.length&&!(e.tr&&e.tr.source==='book')?'<div class="im-gl">📘 '+terms.map(t=>'<b dir="auto">'+esc(t.src)+'</b> = '+esc(t.dst)).join(' · ')+'</div>':'';
-    const low=e.conf!==undefined&&e.conf>0&&e.conf<0.6?'<div class="im-note im-warn">⚠ '+tr('The voice may be unclear — tap ✎ to correct it.','الصوت ممكن يكون مش واضح — اضغط ✎ وصحّحه.')+'</div>':'';
-    const fix=e.editing?'<div class="im-fix"><input id="imfx'+i+'" dir="auto" value="'+esc(e.src)+'"><button class="im-edit" data-imsave="'+i+'">'+tr('Save','حفظ')+'</button></div>':'';
-    return '<div class="im-item"><div class="im-srow"><div class="im-src" dir="'+dir+'">'+imWords(e.src,e.from)+'</div><button class="im-edit" data-imedit="'+i+'" aria-label="edit">✎</button></div>'+fix+low+'<div class="im-tr" dir="'+tdir+'">'+trHtml+'</div>'+gl+'</div>';
-  }).join('');
-  if(IM.interim)h+='<div class="im-item"><div class="im-src im-interim" dir="'+imDir(IM.src)+'">'+esc(IM.interim)+'</div></div>';
-  out.innerHTML=h;
-  out.scrollTop=out.scrollHeight;
-  imShowLast();
-}
-IM.lvl=0;IM.pending=0;IM.speaking=false;IM.err='';IM.raf=0;IM.tts=IM.tts!==false;
-function imStatusText(st){
-  if(st==='error')return IM.err;
-  if(st==='listening')return tr('Listening… · بسمعك','بسمعك…');
-  if(st==='translating')return tr('Translating… · بترجم','بترجم…');
-  if(st==='speaking')return tr('Reading the translation · بقرأ الترجمة','بقرأ الترجمة');
-  return tr('Tap the microphone and start speaking · اضغط الميكروفون وابدأ الكلام','اضغط الميكروفون وابدأ الكلام');
-}
-function imState(){
-  const st=IM.err?'error':IM.pending>0?'translating':IM.speaking?'speaking':IM.on?'listening':'idle';
-  document.querySelectorAll('.imo').forEach(el=>{el.className='im-orb imo '+st;});
-  document.querySelectorAll('#imStatus,.imst').forEach(el=>{el.textContent=imStatusText(st);el.dataset.st=st;});
-  imKick();
-}
-function imBump(v){IM.lvl=Math.max(IM.lvl,v);imKick();}
-function imKick(){
-  if(IM.raf)return;
-  const step=()=>{
-    const els=document.querySelectorAll('.imo');
-    if(!els.length){IM.raf=0;return;}
-    if(IM.speaking)IM.lvl=0.45+0.4*Math.abs(Math.sin(performance.now()/180));
-    else IM.lvl*=0.9;
-    if(!IM.speaking&&IM.lvl<0.01&&!IM.on){IM.lvl=0;els.forEach(e=>e.style.setProperty('--lvl','0'));IM.raf=0;return;}
-    els.forEach(e=>e.style.setProperty('--lvl',IM.lvl.toFixed(3)));
-    IM.raf=requestAnimationFrame(step);
-  };
-  IM.raf=requestAnimationFrame(step);
-}
-function imVoice(lang){
-  try{
-    const re=lang==='ar-EG'?/^ar/i:/^en/i, good=/natural|neural|google|wavenet|online|microsoft/i;
-    const c=(speechSynthesis.getVoices()||[]).filter(v=>re.test(v.lang));
-    const sc=v=>(good.test(v.name)?2:0)+(v.localService?0:1);
-    c.sort((x,y)=>sc(y)-sc(x));
-    return c[0]||null;
-  }catch(e){return null;}
-}
-function imSpeak(text,to){
-  if(!IM.tts||!text||!window.speechSynthesis||!window.SpeechSynthesisUtterance)return;
-  try{
-    speechSynthesis.cancel();
-    const lang=to==='ar-EG'?'ar-EG':'en-US', voice=imVoice(lang);
-    const parts=text.split(/(?<=[.!?؟،,;])\s+/).map(x=>x.trim()).filter(Boolean);
-    parts.forEach((part,idx)=>{
-      const u=new SpeechSynthesisUtterance(part);
-      u.lang=lang;if(voice)u.voice=voice;u.rate=0.92;u.pitch=1;
-      if(idx===0)u.onstart=()=>{IM.speaking=true;imState();};
-      if(idx===parts.length-1){const done=()=>{IM.speaking=false;imState();};u.onend=done;u.onerror=done;}
-      speechSynthesis.speak(u);
-    });
-  }catch(e){}
-}
-function imRun(e){
-  const from=e.from,to=e.to;
-  e.tr=null;IM.pending++;imRender();imState();
-  imTranslate(e.src,from,to)
-    .then(t=>{e.tr=t;imSpeak(t.text,to);})
-    .catch(()=>{e.tr=false;})
-    .finally(()=>{IM.pending--;imRender();imState();});
-}
-function imAdd(text,conf){
-  const from=IM.src,to=imOther(from);
-  const e={src:text,from,to,tr:null,conf};
-  IM.log.push(e);if(IM.log.length>40)IM.log.shift();
-  imRun(e);
-}
-function imStop(){
-  IM.on=false;IM.interim='';
-  if(IM.rec){const r=IM.rec;IM.rec=null;try{r.onend=null;r.onresult=null;r.onerror=null;r.onspeechstart=null;r.stop();}catch(x){}}
-  try{if(window.speechSynthesis)speechSynthesis.cancel();}catch(x){}
-  IM.speaking=false;
-  const b=$('#imMic');if(b){b.classList.remove('on');const sp=b.querySelector('span');if(sp)sp.textContent=tr('Start speaking','ابدأ الكلام');}
-  const fm=$('#imfMic');if(fm)fm.classList.toggle('off',!IM.on);
-  imRender();imState();
-}
-function imStart(){
-  if(!SR){IM.err=tr('Voice input is not supported in this browser. Use Chrome or Edge.','المتصفح ده مايدعمش الصوت. جرّب Chrome أو Edge.');imState();toast(IM.err,5000);return;}
-  if(inAppBrowser()){IM.err=tr('Open the site in Chrome or Edge to use the microphone.','افتح الموقع في Chrome أو Edge عشان الميكروفون يشتغل.');imState();toast(IM.err,5000);return;}
-  IM.err='';
-  const r=new SR();
-  r.lang=IM.src;r.continuous=true;r.interimResults=true;r.maxAlternatives=3;
-  r.onspeechstart=()=>imBump(0.8);
-  r.onresult=ev=>{
-    IM.err='';
-    let interim='';
-    for(let i=ev.resultIndex;i<ev.results.length;i++){
-      const res=ev.results[i];
-      if(res.isFinal){
-        let best=res[0];for(let k=1;k<res.length;k++)if((res[k].confidence||0)>(best.confidence||0))best=res[k];
-        const t=best.transcript.trim(), cf=best.confidence||0;
-        if(t&&cf>0&&cf<0.4){IM.err=tr('I did not catch that well. Say it again.','مسمعتش كويس، قول الكلمة تاني.');imState();continue;}
-        if(t)imAdd(t,cf);
-      }else interim+=res[0].transcript;
-    }
-    IM.interim=interim.trim();imBump(0.9);imRender();imState();
-  };
-  r.onerror=ev=>{
-    const c=ev.error;
-    if(c==='no-speech'){IM.err=tr('I did not hear anything. Speak again.','مسمعتش حاجة، اتكلم تاني.');imState();return;}
-    if(c==='aborted')return;
-    let m='';
-    if(c==='not-allowed'||c==='service-not-allowed')m=tr('Microphone permission is blocked. Allow it in the browser site settings.','الميكروفون متقفل. اسمح بيه من إعدادات الموقع في المتصفح.');
-    else if(c==='network')m=tr('Voice input needs an internet connection.','الصوت محتاج إنترنت.');
-    else if(c==='audio-capture')m=tr('No microphone found.','مفيش ميكروفون.');
-    else m=tr('Voice input stopped. Tap the microphone to try again.','الصوت وقف. اضغط الميكروفون عشان تجرب تاني.');
-    IM.err=m;toast(m,5000);imStop();IM.err=m;imState();
-  };
-  r.onend=()=>{
-    if(!(IM.on&&IM.rec===r))return;
-    IM.interim='';imRender();
-    setTimeout(()=>{
-      if(!(IM.on&&IM.rec===r))return;
-      try{r.start();}catch(x){imStop();IM.err=tr('Could not restart the microphone. Tap it again.','متقدرش أرجّع الميكروفون. اضغط عليه تاني.');imState();}
-    },300);
-  };
-  IM.rec=r;IM.on=true;
-  try{r.start();}catch(x){IM.on=false;IM.rec=null;IM.err=tr('Could not start the microphone. Tap it again.','متقدرش أشغّل الميكروفون. اضغط عليه تاني.');imState();return;}
-  const b=$('#imMic');if(b){b.classList.add('on');const sp=b.querySelector('span');if(sp)sp.textContent=tr('Stop','إيقاف');}
-  imOpenFull();imRender();imState();
-}
-
-const IMF_ICON={
-  down:'<svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>',
-  spk:'<svg viewBox="0 0 24 24"><path d="M11 5L6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 010 7M18.5 5.5a9 9 0 010 13"/></svg>',
-  mic:'<svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg>',
-  x:'<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>'
-};
-function imShowLast(){
-  const fl=$('#imfLast');if(!fl)return;
-  if(IM.interim){fl.innerHTML=esc(IM.interim);return;}
-  const last=IM.log[IM.log.length-1];
-  if(!last){fl.innerHTML=esc(tr('Say something…','قول أي حاجة…'));return;}
-  if(last.tr===null){fl.innerHTML=esc(last.src)+'<small>…</small>';return;}
-  if(last.tr===false){fl.innerHTML=esc(last.src)+'<small>⚠ '+esc(tr('Translation unavailable right now','الترجمة مش متاحة دلوقتي'))+'</small>';return;}
-  fl.innerHTML=esc(last.tr.text)+'<small>'+esc(last.src)+'</small>';
-}
-function imOpenFull(){
-  if($('#imFull'))return;
-  const f=document.createElement('div');
-  f.className='im-full';f.id='imFull';f.setAttribute('role','dialog');f.setAttribute('aria-label',tr('Voice translator','المترجم الصوتي'));
-  f.innerHTML='<div class="imf-top"><button class="imf-btn" id="imfClose" type="button" aria-label="'+esc(tr('Close','إغلاق'))+'">'+IMF_ICON.down+'</button>'
-    +'<button class="imf-btn'+(IM.tts?'':' off')+'" id="imfTts" type="button" aria-label="'+esc(tr('Read aloud','اقرأ الترجمة'))+'">'+IMF_ICON.spk+'</button></div>'
-    +'<div class="imf-center"><div class="im-orb idle imo" aria-hidden="true"><span class="ring r3"></span><span class="ring r2"></span><span class="ring r1"></span><span class="arc"></span><span class="core"></span></div>'
-    +'<div class="im-status imst" role="status" aria-live="polite"></div><div class="imf-last" id="imfLast"></div></div>'
-    +'<div class="imf-bar"><input id="imfWord" dir="auto" placeholder="'+esc(tr('Type a word to translate…','اكتب كلمة عشان تترجمها…'))+'">'
-    +'<button class="imf-btn'+(IM.on?'':' off')+'" id="imfMic" type="button" aria-label="mic">'+IMF_ICON.mic+'</button>'
-    +'<button class="imf-btn imf-x" id="imfX" type="button" aria-label="'+esc(tr('Exit','خروج'))+'">'+IMF_ICON.x+'</button></div>';
-  document.body.appendChild(f);
-  $('#imfClose').onclick=imCloseFull;
-  $('#imfX').onclick=imCloseFull;
-  $('#imfMic').onclick=()=>{IM.on?imStop():imStart();};
-  $('#imfTts').onclick=()=>{
-    IM.tts=!IM.tts;if(!IM.tts){try{speechSynthesis.cancel();}catch(x){}IM.speaking=false;}
-    $('#imfTts').classList.toggle('off',!IM.tts);const ct=$('#imTts');if(ct)ct.classList.toggle('on',IM.tts);imState();
-  };
-  $('#imfWord').onkeydown=e=>{if(e.key==='Enter'){const v=e.target.value;imLook(v).then(()=>{const wo=$('#imWordOut'),fl=$('#imfLast');if(wo&&fl)fl.innerHTML=wo.innerHTML;});}};
-  imShowLast();imState();
-}
-function imCloseFull(){
-  imStop();
-  const f=$('#imFull');if(f)f.remove();
-}
-async function imLook(text){
-  const w=text.replace(/[^\p{L}\p{N}'\-]/gu,'');
-  const box=$('#imWordOut');if(!box)return;
-  if(!w){box.textContent='';return;}
-  box.textContent='…';
-  const from=IM.src,to=imOther(from);
-  const ex=imExactTerm(w,from);
-  if(ex){box.innerHTML='<span dir="auto">'+esc(w)+'</span> → <span dir="auto">'+esc(ex)+'</span> <span class="im-note">📘</span>';return;}
-  try{const t=await imTranslate(w,from,to);box.innerHTML='<span dir="auto">'+esc(w)+'</span> → <span dir="auto">'+esc(t.text)+'</span>'+(t.match<0.6&&t.source!=='book'?' <span class="im-note im-warn">⚠</span>':'');}
-  catch(e){box.textContent=tr('Translation unavailable right now','الترجمة مش متاحة دلوقتي');}
-}
-function imWire(){
-  const b=$('#imMic');
-  if(b)b.onclick=()=>{IM.on?imStop():imStart();};
-  document.querySelectorAll('[data-imsrc]').forEach(x=>x.onclick=()=>{
-    imStop();IM.src=x.dataset.imsrc;
-    document.querySelectorAll('[data-imsrc]').forEach(y=>y.classList.toggle('on',y===x));
-    const ph=$('#imWord');if(ph)ph.dir=imDir(IM.src);
-  });
-  const tt=$('#imTts');if(tt)tt.onclick=()=>{IM.tts=!IM.tts;if(!IM.tts){try{speechSynthesis.cancel();}catch(x){}IM.speaking=false;}tt.classList.toggle('on',IM.tts);tt.setAttribute('aria-pressed',String(IM.tts));imState();};
-  const go=$('#imGo'),inp=$('#imWord');
-  if(go)go.onclick=()=>imLook(inp.value);
-  if(inp)inp.onkeydown=e=>{if(e.key==='Enter')imLook(inp.value);};
-  const out=$('#imOut');
-  if(out){
-    out.onclick=e=>{
-      const ed=e.target.closest('[data-imedit]');
-      if(ed){const e2=IM.log[+ed.dataset.imedit];if(e2){e2.editing=!e2.editing;imRender();const f=$('#imfx'+ed.dataset.imedit);if(f)f.focus();}return;}
-      const sv=e.target.closest('[data-imsave]');
-      if(sv){const i=+sv.dataset.imsave,e2=IM.log[i],f=$('#imfx'+i);if(e2&&f){const v=f.value.trim();if(v&&v!==e2.src){e2.src=v;e2.editing=false;imRun(e2);}else{e2.editing=false;imRender();}}return;}
-      const t=e.target.closest('.imw');if(t)imLook(t.dataset.w);
-    };
-    out.onkeydown=e=>{
-      if(e.key==='Enter'&&e.target.id&&e.target.id.startsWith('imfx')){const i=+e.target.id.slice(4);const e2=IM.log[i];if(e2){const v=e.target.value.trim();if(v&&v!==e2.src){e2.src=v;e2.editing=false;imRun(e2);}}return;}
-      if(e.key==='Enter'){const t=e.target.closest&&e.target.closest('.imw');if(t)imLook(t.dataset.w);}
-    };
-  }
-  imRender();
-}
-VIEWS.interp=function(){
-  if(!IM_LEAVE_SET.v){LEAVE.push(imStop);IM_LEAVE_SET.v=true;}
-  const en=IM.src==='en-US';
-  main('<div class="fade im-page"><h1>'+tr('Voice Translator','المترجم الصوتي')+'</h1>'
-   +'<p class="sub">'+tr('Speak and hear the translation. Tap any word to translate it. Medical terms from the book are translated exactly as the book says.','اتكلم واسمع الترجمة. اضغط على أي كلمة عشان تترجمها. المصطلحات الطبية من الكتاب بتتترجم زي ما هي في الكتاب بالظبط.')+'</p>'
-   +'<div class="card im-card">'
-   +'<div class="seg" role="group">'
-   +'<button type="button" data-imsrc="en-US" class="'+(en?'on':'')+'">English → العربي</button>'
-   +'<button type="button" data-imsrc="ar-EG" class="'+(en?'':'on')+'">العربي → English</button></div>'
-   +'<div class="im-stage"><div class="im-orb idle imo" id="imOrb" aria-hidden="true"><span class="ring r3"></span><span class="ring r2"></span><span class="ring r1"></span><span class="arc"></span><span class="core"></span></div></div>'
-   +'<div class="im-status" id="imStatus" role="status" aria-live="polite"></div>'
-   +'<div class="im-row"><button class="im-mic'+(IM.on?' on':'')+'" id="imMic" type="button">'+ic('voice')+'<span>'+(IM.on?tr('Stop','إيقاف'):tr('Start speaking','ابدأ الكلام'))+'</span></button>'
-   +'<button class="im-tts'+(IM.tts?' on':'')+'" id="imTts" type="button" aria-pressed="'+String(IM.tts)+'">🔊 <span>'+tr('Read aloud','اقرأ الترجمة')+'</span></button></div>'
-   +'<div class="im-out" id="imOut" role="log" aria-live="off"></div>'
-   +'<div class="im-look"><input id="imWord" dir="auto" placeholder="'+tr('Type a word to translate…','اكتب كلمة عشان تترجمها…')+'"><button class="btn" id="imGo" type="button">'+tr('Translate','ترجم')+'</button></div>'
-   +'<div class="im-wo" id="imWordOut"></div>'
-   +'<p class="sub small">'+tr('Speech is recognised by your browser (Chrome or Edge work best). Translation uses the browser\'s built-in translator when available; otherwise the text is sent to the MyMemory translation service. Always check important terms.','الكلام بيتحول لنص عن طريق المتصفح (Chrome أو Edge أفضل). الترجمة بتستخدم مترجم المتصفح لو موجود، ولو لأ النص بيتبعت لخدمة MyMemory. راجع المصطلحات المهمة دايماً.')+'</p>'
-   +'</div></div>');
-  imWire();imState();
-};
 
 /* ===== v53: OneSignal web push ===== */
 function osSync(){
@@ -6451,8 +6029,8 @@ body.bb-open #bebo-panel{display:flex;animation:bbpop .25s ease}
 .bb-sp.on{background:rgba(124,196,255,.22);color:#fff;border-color:var(--bb)}
 .bb-sp svg{width:15px;height:15px}
 .bb-sp.ld{pointer-events:none;opacity:.75}
-.bb-sp.ld svg{animation:bbspin 1s linear infinite}
-@keyframes bbspin{to{transform:rotate(360deg)}}
+.bb-sp.ld svg{animation:bbrot 1s linear infinite}
+@keyframes bbrot{to{transform:rotate(360deg)}}
 
 /* mind map */
 .bb-mm{flex:none;align-self:stretch;max-width:min(620px,100%);background:var(--surface,#0f1729);border:1px solid var(--border-2,rgba(148,163,210,.18));border-radius:18px;padding:13px 14px;animation:bbpop .3s;position:relative;overflow:hidden}
@@ -6601,6 +6179,14 @@ async function send(text){
   var media=window.__bbMedia||null;window.__bbMedia=null;try{var mb0=$('#bb-mbar');if(mb0){mb0.classList.remove('on');mb0.innerHTML=''}}catch(e){}
   if((!text&&!media)||busy)return;
   $('#bb-txt').value='';autosize();
+  if(!media&&/(اسمك|إنت مين|انت مين|مين انت|مين إنت|عرفني بنفسك|عرفني عليك|بتتسم[يى])|(your name|who are you|what are you)/i.test(text)){
+    add('bb-u',esc(text));hist.push({role:'user',content:text});
+    var _nm=T('أنا <b>بيبو</b> 👋 مساعدك الذكي في منصة رفيق للتمريض. اسألني في أي مادة من بنك الأسئلة!','I am <b>Bebo</b> 👋 your AI study assistant on the Rafiq nursing platform. Ask me about any subject in the question bank!');
+    setState('happy');add('bb-a',_nm);hist.push({role:'assistant',content:T('أنا بيبو، مساعدك الذكي في منصة رفيق للتمريض.','I am Bebo, your AI study assistant on the Rafiq nursing platform.')});
+    if(cur){cur.ts=Date.now();if(!cur.title)cur.title=text.slice(0,42);if(chats.indexOf(cur)<0)chats.unshift(cur);chats.sort(function(a,b){return b.ts-a.ts});persist();renderSide()}
+    setTimeout(function(){if(!busy)setState('idle')},1500);
+    return;
+  }
   if(media){
     var mtxt=text||(media.kind==='image'?T('اشرح اللي في الصورة دي، ولو فيها سؤال حله','Explain this image, and if it has a question, solve it'):T('دي رسالة صوتية مني، اسمعها ورد عليها','This is a voice note from me, listen to it and reply'));
     if(window.__bbMediaBubble)window.__bbMediaBubble(media,text);else add('bb-u',esc(mtxt));
@@ -6614,7 +6200,7 @@ async function send(text){
   if(!tok){return fail(T('لازم تسجل دخول بحسابك عشان تكلم بيبو.','Please sign in to your account to chat with Bebo.'))}
   try{
     ctrl=new AbortController();
-    var ui_=ar()?'ar':'en';var ctx='';try{var R=window.__rfq;ctx='view: '+(R&&R.cur&&R.cur()&&R.cur().v||'')}catch(e){}
+    var ui_=ar()?'ar':'en';var ctx='';try{var R=window.__rfq;ctx='view: '+(R&&R.cur&&R.cur()&&R.cur().v||'')}catch(e){}ctx=(ctx?ctx+' · ':'')+(ar()?'هويتك: اسمك بيبو (Bebo). لو حد سألك عن اسمك أو مين انت، قول أنا بيبو، وممنوع تماما تقول بوبو':'Identity: your name is Bebo (بيبو). If asked your name or who you are, say Bebo, never Bobo.');
     var r=await fetch(EP,{method:'POST',signal:ctrl.signal,headers:{'Content-Type':'application/json',Authorization:'Bearer '+tok},body:JSON.stringify({messages:hist.slice(-12),ui:ui_,context:ctx,media:media?{kind:media.kind,mime:media.mime,data:media.data,dur:Math.round(media.dur||0)}:null})});
     if(r.status===429)return fail(T('وصلت للحد اليومي (60 رسالة). كمّل بكرة.','You reached the daily limit (60 messages). Continue tomorrow.'));
     if(r.status===401)return fail(T('انتهت الجلسة، سجّل دخول تاني.','Session expired, please sign in again.'));
@@ -6623,9 +6209,9 @@ async function send(text){
     var rd=r.body.getReader(),dec=new TextDecoder();
     dots.remove();node=add(refused?'bb-a ref':'bb-a','');setState('happy');status(T('بيرد عليك','answering'));
     for(;;){var x=await rd.read();if(x.done)break;out+=dec.decode(x.value,{stream:true});
-      var shown=hideBlocks(out);node.innerHTML=md(shown);scroll()}
+      var shown=bbFixName(hideBlocks(out));node.innerHTML=md(shown);scroll()}
     var m,re=/\[\[ACT:([^\]]+)\]\]/g;while((m=re.exec(out)))acts.push(m[1]);
-    var ext=extractBlocks(out);out=ext.text;
+    out=bbFixName(out);var ext=extractBlocks(out);out=ext.text;
     if(node)node.innerHTML=md(out||' ');
     hist.push({role:'assistant',content:out,blocks:ext.blocks.length?ext.blocks:null});
     renderBlocks(ext.blocks);
@@ -6635,6 +6221,7 @@ async function send(text){
   fin();setTimeout(function(){if(!busy)setState('idle')},1600);
 }
 // ---- patch4: interactive blocks (quiz, flashcards, tables, openq, analysis, slash, reactions) ----
+function bbFixName(s){return (s||'').replace(/بوبو/g,'بيبو').replace(/\b[Bb]obo\b/g,function(m){return m[0]==='B'?'Bebo':'bebo'});}
 function hideBlocks(s){
   return s.replace(/\[\[QUIZ\]\][\s\S]*?\[\[\/QUIZ\]\]/g,'').replace(/\[\[CARD\]\][\s\S]*?\[\[\/CARD\]\]/g,'').replace(/\[\[MINDMAP\]\][\s\S]*?\[\[\/MINDMAP\]\]/g,'').replace(/\[\[OPENQ:[^\]]*\]\]/g,'').replace(/\[\[(?:QUIZ|CARD|MINDMAP|OPENQ|ACT)[\s\S]*$/,'');
 }
