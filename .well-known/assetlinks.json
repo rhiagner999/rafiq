@@ -1,0 +1,8 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.rafiq_nursing.twa",
+    "sha256_cert_fingerprints": ["C3:50:DA:11:D3:6E:59:88:19:0A:A9:D7:CE:3D:73:6F:CE:26:0C:6A:60:CC:D5:DE:6D:B2:DF:08:A4:B1:F5:75"]
+  }
+}]
